@@ -32,7 +32,7 @@
 
 <svelte:head>
   <link rel="icon" href={M} />
-  <title>M_Dragonborn</title>
+  <title>M_Drake</title>
 </svelte:head>
 
 <!-- Full-screen particles container -->
