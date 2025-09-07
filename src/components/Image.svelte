@@ -16,7 +16,6 @@
 		altImage = container.querySelector('.alt-image') as HTMLDivElement;
 		mainImage = container.querySelector('.main-image') as HTMLImageElement;
 
-		// Function to sync alt-image size with main image
 		const resize = () => {
 			altImage.style.width = `${mainImage.offsetWidth}px`;
 			altImage.style.height = `${mainImage.offsetHeight}px`;
@@ -91,6 +90,7 @@
 		border-radius: 20px;
 		cursor: none;
 		display: block;
+		animation: hovering 2.5s ease-in-out infinite;
 		@media (max-width: 505px) {
 			width: 100%;
 		}
@@ -106,7 +106,10 @@
 		background-position: top left;
 		clip-path: circle(0px at 0 0);
 		pointer-events: none;
-		transition: clip-path 0s; /* instant reveal */
+		transition: clip-path 0s;
+		@media (max-width: 505px) {
+			width: 100%;
+		}
 	}
 
 	.cursor-mask {
@@ -116,5 +119,11 @@
 		pointer-events: none;
 		display: none;
 		transform: translate(-50%, -50%);
+	}
+
+	@keyframes hovering {
+		0% { transform: translateY(6px); }
+		50% { transform: translateY(-6px); }
+		100% { transform: translateY(6px); }
 	}
 </style>
