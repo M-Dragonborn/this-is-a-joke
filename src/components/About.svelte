@@ -20,8 +20,8 @@
 		<span class="highlight">C</span>, <span class="highlight">HTML</span>, and
 		<span class="highlight">CSS</span>, with the first being my most used and the last being my
 		least used language.<br /> You can see some of the video games I play on my
-		<a class="highlight2" href="#steam">Steam</a> account. In addition, I also play
-		<a class="highlight2" href="#chess">chess</a>
+		<a class="highlight2" href="steam">Steam</a> account. In addition, I also play
+		<a class="highlight2" href="chess">chess</a>
 		and
 		<a class="highlight1" href="https://en.wikipedia.org/wiki/Dungeons_%26_Dragons"
 			>Dungeons and Dragons</a
@@ -38,8 +38,8 @@
 		by now).<br />
 		I almost always have music playing in the background while I work or game. I have learned audio engineering and sound design from a friend of mine who runs a production studio in <a class="highlight1"href="https://en.wikipedia.org/wiki/Hollywood">Hollywood</a>.<br/>
 		I generally hang around on
-		<a class="highlight2" href="#discord">Discord</a>, but you can probably find me via
-		<a class="highlight2" href="#mail">mail</a>.
+		<a class="highlight2" href="discord">Discord</a>, but you can probably find me via
+		<a class="highlight2" href="mail">mail</a>.
 	</p>
 </section>
 
