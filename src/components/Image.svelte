@@ -16,9 +16,14 @@
 		altImage = container.querySelector('.alt-image') as HTMLDivElement;
 		mainImage = container.querySelector('.main-image') as HTMLImageElement;
 
-		// Set altImage height to match main image
-		altImage.style.width = `${mainImage.offsetWidth}px`;
-		altImage.style.height = `${mainImage.offsetHeight}px`;
+		// Function to sync alt-image size with main image
+		const resize = () => {
+			altImage.style.width = `${mainImage.offsetWidth}px`;
+			altImage.style.height = `${mainImage.offsetHeight}px`;
+		};
+
+		resize();
+		window.addEventListener('resize', resize);
 
 		const move = (e: MouseEvent) => {
 			if (!active) return;
@@ -31,10 +36,14 @@
 			posX += (mouseX - posX) * 0.15;
 			posY += (mouseY - posY) * 0.15;
 
-			if (cursor) cursor.style.left = `${posX}px`;
-			if (cursor) cursor.style.top = `${posY}px`;
+			if (cursor) {
+				cursor.style.left = `${posX}px`;
+				cursor.style.top = `${posY}px`;
+			}
 
-			if (altImage) altImage.style.clipPath = `circle(40px at ${posX}px ${posY}px)`;
+			if (altImage) {
+				altImage.style.clipPath = `circle(40px at ${posX}px ${posY}px)`;
+			}
 
 			requestAnimationFrame(animate);
 		};
@@ -55,17 +64,19 @@
 		container.addEventListener('mouseenter', enter);
 		container.addEventListener('mouseleave', leave);
 		container.addEventListener('mousemove', move);
+
+		return () => window.removeEventListener('resize', resize);
 	});
 </script>
 
 <div class="profile-container" bind:this={container}>
 	<!-- Main image at bottom -->
-	<img src="pfpmain.webp" alt="Profile" class="main-image" />
+	<img src="/pfpmain.webp" alt="Profile" class="main-image" />
 
-	<!-- Alternate image on top -->
+	<!-- Alternate image on top, revealed only in cursor circle -->
 	<div class="alt-image"></div>
 
-	<!-- Invisible cursor tracker -->
+	<!-- Invisible div for cursor tracking -->
 	<div class="cursor-mask" bind:this={cursor}></div>
 </div>
 
@@ -90,12 +101,12 @@
 		top: 0;
 		left: 0;
 		border-radius: 20px;
-		background-image: url('alt-image.webp');
-		background-size: 100% 100%; /* Match main image exactly */
+		background-image: url('/alt-image.webp');
+		background-size: 100% 100%; /* match main image */
 		background-position: top left;
 		clip-path: circle(0px at 0 0);
 		pointer-events: none;
-		transition: clip-path 0s;
+		transition: clip-path 0s; /* instant reveal */
 	}
 
 	.cursor-mask {
