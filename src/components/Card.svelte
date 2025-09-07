@@ -81,7 +81,7 @@
 		#card {
 			overflow: auto; // Allows scrolling when screen height is too small.
 			width: max-content;
-			max-width: 900px;
+			max-width: 505px;
 			min-width: 300px;
 		}
 
