@@ -18,7 +18,7 @@
 <style lang="scss">
     .social {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.2rem;
 		font-size:1rem;
         align-items: center;
         padding:.3rem;
