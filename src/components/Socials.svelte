@@ -6,6 +6,7 @@
 		faGithub,
 		faInstagram,
 		faInstagramSquare,
+		faLinkedin,
 		faReddit,
 		faTelegramPlane,
 		faTwitter,
@@ -36,6 +37,7 @@
 			anchor="Instagram"
 		/>		
 		<Social faIcon={faGithub} link="https://github.com/M-Dragonborn" anchor="github" />
+		<Social faIcon={faLinkedin} link="https://www.linkedin.com/in/musfiq-rahman-78a30937b/" anchor="LinkedIn"/>
 		<Social faIcon={faTelegramPlane} link="https://t.me/MDragonborn" anchor="telegram" />
 		<Social
 			faIcon={faYoutube}
