@@ -82,7 +82,6 @@
 			overflow: auto; // Allows scrolling when screen height is too small.
 			width: max-content;
 			max-width: 505px;
-			min-width: 300px;
 		}
 
 		#components,
