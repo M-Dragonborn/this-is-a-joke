@@ -86,7 +86,7 @@
 	}
 
 	.main-image {
-		width: 1350px;
+		width: 1650px; /* Updated width */
 		border-radius: 20px;
 		cursor: none;
 		display: block;
@@ -106,7 +106,7 @@
 		background-position: top left;
 		clip-path: circle(0px at 0 0);
 		pointer-events: none;
-		transition: clip-path 0s;
+		transition: clip-path 0s; /* instant reveal */
 		@media (max-width: 505px) {
 			width: 100%;
 		}
