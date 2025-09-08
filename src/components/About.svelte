@@ -44,33 +44,55 @@
 </section>
 
 <style>
+	p {
+		text-align: justify;
+		line-height: 1.5;
+		word-wrap: break-word;
+	}
+
 	a {
 		white-space: nowrap;
 	}
 
-	p {
-		text-align: justify;
-	}
-	.highlight {
-		color: #48a0ff;
-	}
-	.highlight1 {
-		color: #48a0ff;
-	}
-	.highlight1:hover {
-		color: #02ffe1;
-		text-shadow:
-			0 0 8px #02ffe1,
-			0 0 16px #0084ff;
-	}
+	.highlight,
+	.highlight1,
 	.highlight2 {
 		color: #48a0ff;
-		font-weight: bold;
 	}
+
+	.highlight1:hover,
 	.highlight2:hover {
 		color: #02ffe1;
-		text-shadow:
-			0 0 8px #02ffe1,
-			0 0 16px #0084ff;
+		text-shadow: 0 0 8px #02ffe1, 0 0 16px #0084ff;
+	}
+
+	.highlight2 {
+		font-weight: bold;
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		p {
+			font-size: 0.95rem;
+		}
+		.highlight,
+		.highlight1,
+		.highlight2 {
+			word-break: break-word; /* Prevent long text from overflowing */
+		}
+		a {
+			word-break: break-word;
+		}
+	}
+	
+	@media (max-width: 480px) {
+		p {
+			font-size: 0.9rem;
+		}
+		.highlight,
+		.highlight1,
+		.highlight2 {
+			font-size: 0.9rem;
+		}
 	}
 </style>

@@ -14,20 +14,22 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #02ffe1;
-    font-size: 1rem;
+    margin-bottom: 0.4rem;
     font-weight: bold;
-    margin-bottom: .4rem;
+    flex-wrap: wrap; /* wrap if container is narrow */
 }
 
 .header-icon {
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem); /* fluid scaling */
+    flex-shrink: 0; /* prevents icon from shrinking */
+    display: flex; /* ensures proper alignment */
+    align-items: center;
 }
 
 .header-text {
     color: #02ffe1;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: clamp(1.5rem, 2.5vw, 1.75rem); /* fluid scaling */
+    word-break: break-word;
 }
 </style>

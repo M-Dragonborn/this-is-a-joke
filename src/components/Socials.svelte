@@ -56,7 +56,19 @@
 </section>
 
 <style lang="scss">
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0.2rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem; /* spacing between socials */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
 	ul {
-		list-style: none;
+		gap: 0.1rem;           /* more spacing on tablets and larger screens */
 	}
+}
 </style>
