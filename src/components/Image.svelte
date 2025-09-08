@@ -27,11 +27,11 @@
 		updateAltImageSize();
 		window.addEventListener('resize', updateAltImageSize);
 
-		const move = (e: MouseEvent) => {
+		const move = (x: number, y: number) => {
 			if (!active) return;
 			const rect = container.getBoundingClientRect();
-			mouseX = e.clientX - rect.left;
-			mouseY = e.clientY - rect.top;
+			mouseX = x - rect.left;
+			mouseY = y - rect.top;
 		};
 
 		const animate = () => {
@@ -58,9 +58,22 @@
 			altImage && (altImage.style.clipPath = 'circle(0px at 0 0)');
 		};
 
+		// Mouse events
 		container.addEventListener('mouseenter', enter);
 		container.addEventListener('mouseleave', leave);
-		container.addEventListener('mousemove', move);
+		container.addEventListener('mousemove', (e) => move(e.clientX, e.clientY));
+
+		// Touch events for mobile
+		container.addEventListener('touchstart', (e) => {
+			enter();
+			const touch = e.touches[0];
+			move(touch.clientX, touch.clientY);
+		});
+		container.addEventListener('touchmove', (e) => {
+			const touch = e.touches[0];
+			move(touch.clientX, touch.clientY);
+		});
+		container.addEventListener('touchend', leave);
 
 		return () => window.removeEventListener('resize', updateAltImageSize);
 	});
@@ -76,6 +89,7 @@
 .profile-container {
 	position: relative;
 	display: inline-block;
+	touch-action: none; // prevents default scrolling when touching
 }
 
 .main-image {
