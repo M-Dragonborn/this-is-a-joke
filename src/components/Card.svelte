@@ -4,7 +4,6 @@
 	import About from '../components/About.svelte';
 	import Socials from './Socials.svelte';
 </script>
-<div id="particles-js"></div>
 <div class="card-center">
 	<div id="card">
 		<div id="image">
